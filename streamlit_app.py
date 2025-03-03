@@ -1,8 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -33,13 +31,6 @@ for k in k_range:
     knn.fit(X_train, y_train)
     y_pred = knn.predict(X_test)
     scores.append(accuracy_score(y_test, y_pred))
-
-# Plot accuracy vs. K values
-fig, ax = plt.subplots()
-ax.plot(k_range, scores)
-ax.set_xlabel("Value of K in KNN")
-ax.set_ylabel("Testing Accuracy")
-st.pyplot(fig)
 
 # Select best K
 best_k = scores.index(max(scores)) + 1
