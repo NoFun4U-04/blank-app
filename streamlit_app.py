@@ -24,17 +24,17 @@ species_map = {0: "setosa", 1: "versicolor", 2: "virginica"}
 
 # Streamlit UI
 st.set_page_config(page_title="Iris Logistic Regression Classifier", layout="wide")
-st.title("🌸 Iris Dataset Classification using Logistic Regression 🌿")
+st.title(" Iris Dataset Classification using Logistic Regression ")
 st.write("This app predicts the species of an Iris flower based on its features using Logistic Regression.")
 
 # Manual input for prediction
-st.subheader("🔢 Predict Custom Input")
+st.subheader(" Predict Custom Input")
 sepal_length = st.number_input("Sepal Length (cm)", min_value=4.0, max_value=8.0, value=5.0, step=0.1)
 sepal_width = st.number_input("Sepal Width (cm)", min_value=2.0, max_value=5.0, value=3.0, step=0.1)
 petal_length = st.number_input("Petal Length (cm)", min_value=1.0, max_value=7.0, value=4.0, step=0.1)
 petal_width = st.number_input("Petal Width (cm)", min_value=0.1, max_value=3.0, value=1.0, step=0.1)
 
-if st.button("🔍 Predict Species"):
+if st.button(" Predict Species"):
     sample = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
     prediction = lr.predict(sample)[0]
     st.success(f"**Predicted Species:** {species_map[prediction]}")
