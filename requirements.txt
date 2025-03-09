@@ -1,6 +1,4 @@
 --extra-index-url https://pypi.org/simple
 streamlit
-numpy
-pandas
 scikit-learn==1.2.2
 
